@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<!-- a. 適用するテンプレートの指定 -->
+<ui:composition template="template.xhtml">
+	<!-- b. ページ固有の設定（title）を指定 -->
+	<ui:define name="title">Select the servers</ui:define>
+	<!-- b. ページ固有の設定（content）を指定 -->
+	<ui:define name="content">
+		<h:form>
+			<h:selectManyCheckbox value="#{captureMBean.selectedServers}">
+				<f:selectItems value="#{captureMBean.servers}" />
+			</h:selectManyCheckbox>
+			<h:commandButton value="capture" action="#{captureMBean.execCapture}" />
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

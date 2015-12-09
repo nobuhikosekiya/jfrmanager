@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<!-- a. 適用するテンプレートの指定 -->
+<ui:composition template="template.xhtml">
+	<ui:define name="title">JFR Manager</ui:define>
+	<ui:define name="content">
+		<!-- c. HTTPポスト・リクエストを送信するためのformタグ -->
+		<h:form>
+        <h:commandLink id="capture"
+                   action="capture">
+            <h:outputText id="capturelabel" value="Capture JFR"/>
+        </h:commandLink> 
+		</h:form>
+		<a href="resources/download">Storage Cloud File Download</a>
+	</ui:define>
+</ui:composition>
+</html>

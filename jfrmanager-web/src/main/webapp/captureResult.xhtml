@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<!-- a. 適用するテンプレートの指定 -->
+<ui:composition template="template.xhtml">
+	<!-- b. ページ固有の設定（title）を指定 -->
+	<ui:define name="title">Capture Result</ui:define>
+	<!-- b. ページ固有の設定（content）を指定 -->
+	<ui:define name="content">
+		<br/>		
+		<ui:repeat value="#{captureResultMBean.captureResultDetail}" var="result"
+			varStatus="status">
+			<h:outputText value="#{result.message}" />
+			<h:outputLink value="#{result.url}">
+				<h:outputLabel value="#{result.label}" />
+			</h:outputLink>
+			<br/>
+		</ui:repeat>
+	</ui:define>
+</ui:composition>
+</html>
