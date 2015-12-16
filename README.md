@@ -14,6 +14,7 @@ A experimental sample devtool to run on Oracle Java Cloud Service.
   
 #Using the application
 ## Access from the browser
-Access by https://<JCS admin server public ip address>/jfrmanager/  
+Access by https://#JCS admin server public ip address and port#/jfrmanager/  
+  
 ## Access by REST API
 You can invoke the diagnostic image capture with REST and recieve a html file that includes the links to the uploaded file. A sample Hudson job for invoking the rest api is in the wiki.
